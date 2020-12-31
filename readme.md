@@ -6,7 +6,7 @@
 
 # **Clean Node API**
 
-[![alt text](./public/img/logo-course.png)]
+![alt text](./public/img/logo-course.png)
 
 ---
 
