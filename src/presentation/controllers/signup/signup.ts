@@ -6,7 +6,7 @@ import {
   Controller,
   EmailValidator,
   AddAccount
-} from './signup-protpcols'
+} from './signup-protocols'
 
 export class SignUpController implements Controller {
   private readonly emailValidator: EmailValidator
