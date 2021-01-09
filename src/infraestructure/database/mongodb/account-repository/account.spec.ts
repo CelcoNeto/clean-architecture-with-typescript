@@ -2,13 +2,17 @@ import { MongoClient } from 'mongodb'
 import { AccountMongoRepository } from './account'
 import { MongoHelper } from './helpers/mongo-helper'
 describe('Account mongo repository ', () => {
-  let client: MongoClient
   beforeAll(async () => {
     await MongoHelper.connect(process.env.MONGO_URL)
   })
 
   afterAll(async () => {
     await MongoHelper.disconnect()
+  })
+
+  beforeEach(async () => {
+    const accountCollection = MongoHelper.getCollection('account')
+    await accountCollection.deleteMany({})
   })
   const makeSut = (): AccountMongoRepository => new AccountMongoRepository()
   it('should return an account on success', async () => {
